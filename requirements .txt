@@ -1,0 +1,17 @@
+Flask
+PyPDF2
+google-generativeai
+langchain
+langchain-google-genai
+langchain-community
+SpeechRecognition
+faiss-cpu
+standard-aifc
+flask-cors
+PyAudio
+pycryptodome==3.15.0
+langchain_groq
+langchain_chroma
+pandas
+mysql-connector-python
+llama-parse
