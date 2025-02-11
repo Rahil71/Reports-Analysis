@@ -83,7 +83,7 @@ CORS(app)
 app.secret_key = "your_secret_key"
 
 # AI Configuration
-api_key_openai = os.getenv("OPENAI_API_KEY_1")
+api_key_openai = "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"
 
 # Initialize OpenAI embedding function
 openai_embedding_function = OpenAIEmbeddings(openai_api_key=api_key_openai)
@@ -127,11 +127,11 @@ def sanitize_collection_name(file_name):
         sanitized_name = sanitized_name[:50]  # First 50 characters
 
     # Append a unique number to avoid collisions for truncated names
-    counter = 1
+    # counter = 1
     unique_name = sanitized_name
-    while os.path.exists(f"uploaded_files/{unique_name}.md"):  # Ensure unique file name
-        unique_name = f"{sanitized_name}{counter}"
-        counter += 1
+    # while os.path.exists(f"uploaded_files/{unique_name}.md"):  # Ensure unique file name
+    #     unique_name = f"{sanitized_name}{counter}"
+    #     counter += 1
 
     return unique_name
 

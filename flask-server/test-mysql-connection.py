@@ -22,20 +22,20 @@
 # print("Document Content Extracted:")
 # print(document)
 
-from openai import OpenAI
-import os
+# from openai import OpenAI
+# import os
 
-client = OpenAI(
-    api_key="",
-    base_url=os.getenv("BASE_URL_2")
-)
+# client = OpenAI(
+#     api_key="",
+#     base_url=os.getenv("BASE_URL_2")
+# )
 
-response = client.embeddings.create(
-  input="Your text string goes here",
-  model="text-embedding-ada-002"
-)
+# response = client.embeddings.create(
+#   input="Your text string goes here",
+#   model="text-embedding-ada-002"
+# )
 
-print(response.data[0].embedding)
+# print(response.data[0].embedding)
 
 
 # import openai
@@ -59,3 +59,21 @@ print(response.data[0].embedding)
 #     ],
 # )
 # print(completion.choices[0].message.content)
+
+
+from openai import OpenAI
+
+client = OpenAI(api_key="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")  # Provide your API key here
+
+completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},  # 'system' role is correct
+        {
+            "role": "user",
+            "content": "Write a haiku about recursion in programming."
+        }
+    ]
+)
+
+print(completion.choices[0].message.content)  # Fix: Use `.content` to get the message text

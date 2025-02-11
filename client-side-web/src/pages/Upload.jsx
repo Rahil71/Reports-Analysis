@@ -24,7 +24,7 @@ const UploadPage = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch(`https://8e4f-103-154-26-202.ngrok-free.app/upload`, {
+      const response = await fetch(`https://f7a5-103-154-26-202.ngrok-free.app/upload`, {
         method: "POST",
         body: formData,
       });

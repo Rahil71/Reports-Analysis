@@ -97,11 +97,11 @@ def sanitize_collection_name(file_name):
         sanitized_name = sanitized_name[:50]  # First 50 characters
 
     # Append a unique number to avoid collisions for truncated names
-    counter = 1
+    # counter = 1
     unique_name = sanitized_name
-    while os.path.exists(f"uploaded_files/{unique_name}.md"):  # Ensure unique file name
-        unique_name = f"{sanitized_name}{counter}"
-        counter += 1
+    # while os.path.exists(f"uploaded_files/{unique_name}.md"):  # Ensure unique file name
+    #     unique_name = f"{sanitized_name}{counter}"
+    #     counter += 1
 
     return unique_name
 

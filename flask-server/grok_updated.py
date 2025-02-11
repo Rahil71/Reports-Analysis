@@ -97,11 +97,11 @@ def sanitize_collection_name(file_name):
         sanitized_name = sanitized_name[:50]  # First 50 characters
 
     # Append a unique number to avoid collisions for truncated names
-    counter = 1
+    # counter = 1
     unique_name = sanitized_name
-    while os.path.exists(f"uploaded_files/{unique_name}.md"):  # Ensure unique file name
-        unique_name = f"{sanitized_name}{counter}"
-        counter += 1
+    # while os.path.exists(f"uploaded_files/{unique_name}.md"):  # Ensure unique file name
+    #     unique_name = f"{sanitized_name}{counter}"
+    #     counter += 1
 
     return unique_name
 
@@ -109,9 +109,11 @@ def sanitize_collection_name(file_name):
 def process_pdf_data(file_path, file_name):
     batch_size = 10
     col_name = sanitize_collection_name(file_name.split(".")[0])  # Use sanitized name
+    pdf_file_path = f"uploaded_files/{file_name}"
+    print(f"Pdf ka naam: {pdf_file_path}")
     md_file_path = f"uploaded_files/{col_name}.md"
     
-    if os.path.exists(md_file_path):
+    if os.path.exists(pdf_file_path):
         print("Markdown file already exists. Skipping processing.")
         return True
 
@@ -206,15 +208,27 @@ def upload_files():
         f = request.files['file']
         file_path = os.path.join("uploaded_files", f.filename)
 
-        if not os.path.exists(file_path):
+        col_name = sanitize_collection_name(f.filename.split(".")[0])  # Ensure consistent naming
+        # print(f"collection name: {col_name}")
+        md_file_path = f"uploaded_files/{col_name}.md"  # Expected markdown file path
+        # print(f"markdown file path: {md_file_path}")
+
+        # Check if the markdown file already exists
+        if os.path.exists(md_file_path):
+            print("Markdown file already exists. Skipping processing.")
+            return jsonify({"message": "File already processed. Skipping."}), 201
+        
+        if not os.path.exists(file_path):  # Only save if not already uploaded
             f.save(file_path)
             print("File saved successfully.")
 
         if process_pdf_data(file_path, f.filename):
             return jsonify({"message": "File uploaded and processed successfully."}), 201
+        
         return jsonify({"message": "File processing failed."}), 400
 
     return jsonify({"message": "No files uploaded."}), 400
+
 
 @app.route("/summarize", methods=["POST"])
 def summarize():
