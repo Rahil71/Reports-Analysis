@@ -83,7 +83,9 @@ CORS(app)
 app.secret_key = "your_secret_key"
 
 # AI Configuration
-api_key_openai = ""
+# api_key_openai = "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"
+
+api_key_openai=os.getenv("new_key")
 
 # Initialize OpenAI embedding function
 openai_embedding_function = OpenAIEmbeddings(openai_api_key=api_key_openai)
@@ -139,7 +141,7 @@ def process_pdf_data(file_path, file_name):
     batch_size = 10
     col_name = sanitize_collection_name(file_name.split(".")[0])  # Use sanitized name
     md_file_path = f"uploaded_files/{col_name}.md"
-    
+    print(md_file_path)
     if os.path.exists(md_file_path):
         print("Markdown file already exists. Skipping processing.")
         return True
