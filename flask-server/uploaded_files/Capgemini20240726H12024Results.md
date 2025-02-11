@@ -61,7 +61,7 @@ vincent.biraud@capgemini.com
 |Organic free cash flow*|-53|163|+216|
 |Net cash / (Net debt)*|(3,244)|(2,775)| |
 
-Capgemini generated revenues of €11,138 million in H1 2024, down -2.5% year-on-year on a reported basis and -2.6% at constant exchange rates. On an organic basis (i.e., restated for changes in Group scope and* exchange rates), revenues contracted by -3.0%.
+Capgemini generated revenues of €11,138 million in H1 2024, down -2.5% year-on-year on a reported basis and -2.6% at constant exchange rates. On an organic basis (i.e., restated for changes in Group scope and exchange rates), revenues contracted by -3.0%.
 
 As anticipated, the demand environment is starting slowly to improve. Having passed the trough in Q1, revenue growth rates improved in Q2 as expected, in all businesses and almost all regions and sectors. Q2 Group revenues thus contracted by -1.9% at constant exchange rates and -2.3% on an organic basis.
 
@@ -103,7 +103,7 @@ Finally, revenues in the Asia-Pacific and Latin America region (9% of Group reve
 
 # OPERATIONS BY BUSINESS
 
-At constant exchange rates, total revenues of Strategy & Transformation services (9% of the Group’s total revenues in H1 2024) increased by +2.7% year-on-year at constant exchange rates. Client demand for strategic consulting on their transition towards a more digital and sustainable model is supplemented by their growing interest in exploring the broad GenAI opportunity.
+At constant exchange rates, total revenues* of Strategy & Transformation services (9% of the Group’s total revenues in H1 2024) increased by +2.7% year-on-year at constant exchange rates. Client demand for strategic consulting on their transition towards a more digital and sustainable model is supplemented by their growing interest in exploring the broad GenAI opportunity.
 
 Total revenues of Applications & Technology services (62% of the Group’s total revenues and Capgemini’s core business) declined by -3.4%.
 
@@ -133,16 +133,15 @@ Cash and cash equivalents and cash management assets represent €2.9 billion as
 
 In terms of environmental sustainability, Capgemini has been accelerating its internal sustainability upskilling program through its own Sustainability Campus. In June, the Group made the Sustainability awareness module mandatory to all employees, starting in August 2024. Capgemini was recognized again by an Ecovadis Platinum rating in recognition of its sustainability achievement, with an overall score of 87 points out of 100, up 7 points from last year, and remained part of the CDP (Carbon Disclosure Project) A-List. The Group also extended the scope of its Energy Command Center (ECC) in India in partnership with Schneider Electric, from 8 campuses (operated since 2022) to 23 campuses and more than 70 buildings. In addition, the ECC is now offered as a service, leveraging Capgemini’s and Schneider Electric’s joint expertise in energy optimization to help organizations accelerate their transition towards smarter and more sustainable energy management.
 
-In terms of diversity and inclusion, Capgemini is continuing to shape inclusive futures for all. The Group recently launched the 2nd cohort of EmpowHer, its sponsorship program to bring women to executive leadership positions. In February, Capgemini published its D&I policy, illustrating its focus and commitments. In May, the Group launched its fourth global employee network group, CulturALL, which celebrates the rich heritage, unique customs, and traditions that each employee brings to the table, with 160 nationalities across over 50 countries represented within the Group. In addition, Capgemini has been recognized as one of the "Best Places to Work for People with Disabilities" this year.
+In terms of diversity and inclusion, Capgemini is continuing to shape inclusive futures for all. The Group recently launched the 2nd cohort of EmpowHer, its sponsorship program to bring women to executive leadership positions. In February, Capgemini published its D&I policy, illustrating its focus and commitments. In May, the Group launched its fourth global employee network group, CulturALL, which celebrates customs, and traditions that each employee brings to the table, with 160 nationalities across over 50 countries represented within the Group. In addition, Capgemini has been recognized as one of the "Best Places to Work for People with Disabilities" this year.
 
 # OUTLOOK
 
 The Group’s financial targets for 2024 are updated as follows:
 
-|Revenue growth|-0.5% to -1.5% at constant currency (was 0% to 3%)|
-|---|---|
-|Operating margin|13.3% to 13.6% (unchanged)|
-|Organic free cash flow|around €1.9 billion (unchanged)|
+- Revenue growth of -0.5% to -1.5% at constant currency (was 0% to 3%);
+- Operating margin of 13.3% to 13.6% (unchanged);
+- Organic free cash flow of around €1.9 billion (unchanged).
 
 The inorganic contribution to growth should be around half a point (was ranging from a marginal impact up to 1 point).
 
@@ -154,33 +153,35 @@ All documents relating to this publication will be posted on the Capgemini inves
 
 ### Page 5
 
-PROVISIONAL CALENDAR
-October 30, 2024              Q3 2024 revenues
-February 18, 2025             FY 2024 results
-April 29, 2025                Q1 2025 revenues
-May 7, 2025                   Shareholders’ Meeting
+# PROVISIONAL CALENDAR
 
-DISCLAIMER
+|October 30, 2024|Q3 2024 revenues|
+|---|---|
+|February 18, 2025|FY 2024 results|
+|April 29, 2025|Q1 2025 revenues|
+|May 7, 2025|Shareholders’ Meeting|
+
+# DISCLAIMER
 
 This press release may contain forward-looking statements. Such statements may include projections, estimates,
-assumptions,      statements      regarding plans, objectives,           intentions and/or expectations with              respect    to future
+assumptions, statements regarding plans, objectives, intentions and/or expectations with respect to future
 financial results, events, operations and services and product development, as well as statements, regarding
 future performance or events. Forward-looking statements are generally identified by the words “expects”,
 “anticipates”, “believes”, “intends”, “estimates”, “plans”, “projects”, “may”, “would”, “should” or the negatives of
 these terms and similar expressions. Although Capgemini’s management currently believes that the expectations
-reflected    in  such   forward-looking       statements      are   reasonable,      investors    are   cautioned     that   forward-looking
-statements      are  subject    to   various    risks  and    uncertainties     (including,    without     limitation,   risks   identified   in
+reflected in such forward-looking statements are reasonable, investors are cautioned that forward-looking
+statements are subject to various risks and uncertainties (including, without limitation, risks identified in
 Capgemini’s Universal Registration Document available on Capgemini’s website), because they relate to future
-events and depend on future circumstances that                      may or may not occur and may be different from those
+events and depend on future circumstances that may or may not occur and may be different from those
 anticipated, many of which are difficult to predict and generally beyond the control of Capgemini. Actual results
 and developments may differ materially from those expressed in, implied by or projected by forward-looking
 statements. Forward-looking statements are not intended to and do not give any assurances or comfort as to
 future events or results. Other than as required by applicable law, Capgemini does not undertake any obligation
-to update or revise any forward-looking statement.
-This press release does not contain or constitute an offer of securities for sale or an invitation or inducement to
-invest in securities in France, the United States or any other jurisdiction.
+to update or revise any forward-looking statement. This press release does not contain or constitute an offer of
+securities for sale or an invitation or inducement to invest in securities in France, the United States or any other
+jurisdiction.
 
-ABOUT CAPGEMINI
+# ABOUT CAPGEMINI
 
 Capgemini is a global business and technology transformation partner, helping organizations to accelerate their
 dual transition to a digital and sustainable world, while creating tangible impact for enterprises and society. It is
@@ -190,27 +191,19 @@ of their business needs. It delivers end-to-end services and solutions leveragin
 design to engineering, all fueled by its market leading capabilities in AI, cloud and data, combined with its deep
 industry expertise and partner ecosystem. The Group reported 2023 global revenues of €22.5 billion.
 
-Get the Future You Want |          www.capgemini.com
+Get the Future You Want | www.capgemini.com
 
-                                                                  *          *
+# APPENDIX2
 
-                                                                       *
+# BUSINESS CLASSIFICATION
 
-                                                                APPENDIX2
-                                                                               3F
+Strategy & Transformation includes all strategy, innovation and transformation consulting services.
+Applications & Technology brings together “Application Services” and related activities and notably local
+technology services. Operations & Engineering encompasses all other Group businesses. These comprise Business Services
+(including Business Process Outsourcing and transaction services), all Infrastructure and Cloud services, and
+R&D and Engineering services.
 
-BUSINESS CLASSIFICATION
-
-     Strategy & Transformation includes all strategy, innovation and transformation consulting services.
-     Applications & Technology              brings together “Application Services” and related activities and notably local
-     technology services.
-     Operations & Engineering               encompasses all other Group businesses. These comprise Business Services
-     (including Business Process Outsourcing and transaction services), all Infrastructure and Cloud services, and
-     R&D and Engineering services.
-
-2 Note that in the appendix, certain totals may not equal the sum of amounts due to rounding adjustments.
-
-Press Release                                                                                                                                  5
+Note that in the appendix, certain totals may not equal the sum of amounts due to rounding adjustments.
 
 ### Page 6
 
@@ -218,7 +211,7 @@ Press Release                                                                   
 
 Organic growth or like-for-like growth in revenues is the growth rate calculated at constant Group scope and exchange rates. The Group scope and exchange rates used are those for the reported period. Exchange rates for the reported period are also used to calculate growth at constant exchange rates.
 
-| |Q1 2024|Q2 2024|H1 2024|
+|Reconciliation of growth rates|Q1 2024|Q2 2024|H1 2024|
 |---|---|---|---|
 |Organic growth|-3.6%|-2.3%|-3.0%|
 |Changes in Group scope|+0.3 pts|+0.4 pts|+0.4 pts|
@@ -295,8 +288,6 @@ Press Release
 |Normalized profit for the period|998|1,006|+1%|
 |Average number of shares outstanding|171,947,414|170,981,563| |
 |NORMALIZED EARNINGS PER SHARE (in euros)|5.80|5.88|+1%|
-
-Press Release
 
 ### Page 8
 
