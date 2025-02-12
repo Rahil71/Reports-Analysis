@@ -20,7 +20,7 @@ const ActionPage = () => {
 
   const fetchDropdownOptions = async () => {
     try {
-      const response = await fetch(`https://f7a5-103-154-26-202.ngrok-free.app/get_collection_names`, {
+      const response = await fetch(`https://3042-2409-40c0-3c-2fcd-7d3d-afaa-e227-80b8.ngrok-free.app/get_collection_names`, {
         method: 'POST',
       });
       const data = await response.json();
@@ -63,7 +63,7 @@ const ActionPage = () => {
     }
 
     try {
-        const response = await fetch(`https://f7a5-103-154-26-202.ngrok-free.app${endpoint}`, {
+        const response = await fetch(`https://3042-2409-40c0-3c-2fcd-7d3d-afaa-e227-80b8.ngrok-free.app${endpoint}`, {
             method: "POST",
             body: formData,
         });
