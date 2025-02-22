@@ -228,9 +228,13 @@ def get_llm_response(question, col_name):
         (
             "system",
             """
+            ** Instructions **
                 Answer the question as detailed as possible from the provided context in markdown format. 
                 Ensure the tables are properly formatted with correct alignment, no escaped characters (e.g., \n), and adhere to Markdown standards. 
                 If the answer isn't in the context, respond: 'Answer doesn't exist in the given knowledge base.' Avoid using unnecessary newline escape sequences or formatting that may not render properly. Avoid using own words while providing output
+
+            ** Output Format **
+                output: Text from the pdf
             """
 
         ),
@@ -289,7 +293,7 @@ def explain_tables_route():
         if cached_explanation:
             return jsonify({"table_explanation": cached_explanation}), 200
 
-        question = "Analyze each table in detail and provide a comprehensive explanation of all the numerical data presented in every row and column. For each table, describe what the numbers represent and explain their significance in the context of the report. Highlight any patterns, trends, or relationships observed within the data. Additionally, elaborate on the meaning and relevance of each value using clear English sentences, ensuring that no table or any part of its data is overlooked in the analysis. Ensure their are no own words being used"
+        question = "Analyze each table in detail and provide a comprehensive explanation of all the numerical data presented in every row and column. For each table, describe what the numbers represent and explain their significance in the context of the report."
         table_explanation = get_llm_response(question, collection_name)
         cache_response(collection_name, "table_explanation", table_explanation)
         return jsonify({"table_explanation": table_explanation}), 200
