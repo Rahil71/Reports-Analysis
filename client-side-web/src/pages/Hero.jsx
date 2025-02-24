@@ -1,55 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+"use client"
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+import { FileText, ArrowRight } from "lucide-react"
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-600 via-purple-700 to-purple-900">
-      {/* Decorative waves - top */}
-      <div className="absolute top-0 left-0 right-0 h-64 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-full opacity-30">
-          <div className="absolute top-16 left-0 right-0 h-32 bg-purple-400/20 blur-3xl transform -rotate-3"></div>
-          <div className="absolute top-8 left-1/4 right-0 h-24 bg-purple-300/20 blur-3xl transform rotate-6"></div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-secondary overflow-hidden">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <div className="flex items-center justify-center mb-6">
+            <FileText className="w-16 h-16 text-white/90" />
+          </div>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight">PDF Summarizer</h1>
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-white/90 mb-8 font-light">
+            Transform Documents into Insights
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg text-white/80 mb-12">
+            Unlock the power of your PDFs with AI-driven analysis, summaries, and intelligent querying.
+          </p>
 
-      {/* Landing image */}
-      <div className="absolute top-32 right-0 md:right-20 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72">
-        <img src="/landing.png" alt="Landing illustration" className="w-full h-full object-cover" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-start justify-center min-h-screen px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-4 tracking-tight">
-          Equitec
-        </h1>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-white/90 mb-6">
-          Extracting Insights
-        </h2>
-        <p className="max-w-2xl text-base sm:text-lg text-white/70 mb-8 sm:mb-12">
-        Bridge the gap between documents and decision-making with smart queries.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            to="/upload"
-            className="px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-white text-base sm:text-lg font-semibold 
-                     backdrop-blur-sm bg-white/10 border border-white/20 
-                     transition-all hover:bg-white/20 hover:scale-105
-                     active:scale-95"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            Get Started
-          </Link>
-        </div>
+            <Link
+              to="/upload"
+              className="group px-8 py-4 bg-white rounded-full text-primary font-semibold text-lg 
+                       hover:bg-opacity-90 transition-all duration-300 ease-in-out flex items-center gap-2"
+            >
+              Get Started
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Decorative waves - bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 overflow-hidden">
-        <div className="absolute bottom-0 left-0 right-0 h-full">
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-purple-800 blur-2xl transform -rotate-3"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-purple-900 blur-2xl transform rotate-3"></div>
-        </div>
-      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent" />
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
+

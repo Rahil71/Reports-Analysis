@@ -1,9 +1,20 @@
-import React from 'react';
+"use client"
+import { motion } from "framer-motion"
 
 const PdfLoader = () => {
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white/10 backdrop-blur-md p-8 rounded-lg">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        className="bg-white/10 backdrop-blur-md p-8 rounded-lg"
+      >
         <div className="wrapper">
           <div className="circle"></div>
           <div className="circle"></div>
@@ -13,7 +24,7 @@ const PdfLoader = () => {
           <div className="shadow"></div>
         </div>
         <p className="text-white text-center mt-4">Processing PDF...</p>
-      </div>
+      </motion.div>
       <style jsx>{`
         .wrapper {
           width: 200px;
@@ -104,8 +115,9 @@ const PdfLoader = () => {
           animation-delay: .3s;
         }
       `}</style>
-    </div>
-  );
-};
+    </motion.div>
+  )
+}
 
-export default PdfLoader;
+export default PdfLoader
+
