@@ -6,7 +6,7 @@ Reports Analysis is a web application designed for analyzing reports and documen
 
 ```
 rahil71-reports-analysis/
-├── client/                     # Frontend application
+├── client/                     # Another client version
 │   ├── public/                 
 │   ├── src/                    
 │   │   ├── App.jsx             
@@ -26,7 +26,7 @@ rahil71-reports-analysis/
 │   ├── vite.config.js          
 │   └── package.json            
 │
-├── client-side-web/            # Another client version
+├── client-side-web/            # Frontend application
 │   ├── src/                    
 │   │   ├── components/         
 │   │   │   └── PdfLoader.jsx   
@@ -92,7 +92,7 @@ rahil71-reports-analysis/
 
 1. **Navigate to the Client Directory**  
    ```bash
-   cd ../client
+   cd ../client-side-web
    ```
 
 2. **Install Dependencies**  
