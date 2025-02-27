@@ -101,6 +101,22 @@ const ActionPage = () => {
     }
   }
 
+  const containerAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  }
+
+  const itemAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -112,74 +128,79 @@ const ActionPage = () => {
         to="/upload"
         className="fixed top-4 left-4 px-4 py-2 bg-white/90 backdrop-blur border border-gray-200 
                    text-primary rounded-full text-sm font-semibold hover:bg-white transition-colors z-10 
-                   flex items-center gap-2"
+                   flex items-center gap-2 shadow-sm hover:shadow-md"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to Upload
       </Link>
 
-      <div className="max-w-6xl mx-auto px-4 pt-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-primary"
         >
           PDF Analysis
         </motion.h1>
 
-        <div className="grid gap-8">
+        <motion.div variants={containerAnimation} initial="hidden" animate="show" className="grid gap-6 sm:gap-8">
           {/* Quick Actions Section */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-4"
-          >
-            <button
+          <motion.div variants={itemAnimation} className="grid sm:grid-cols-2 gap-4">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => handleSubmit("Summarize")}
-              className="card hover:shadow-xl transition-shadow p-6 flex items-center gap-4 group"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 
+                       flex items-center gap-4 group hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <div
+                className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center 
+                          group-hover:bg-primary/20 transition-colors"
+              >
                 <BookOpen className="w-6 h-6 text-primary" />
               </div>
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-primary">Summarize PDF</h3>
                 <p className="text-sm text-gray-600">Get a quick overview of your document</p>
               </div>
-            </button>
+            </motion.button>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => handleSubmit("ExplainTables")}
-              className="card hover:shadow-xl transition-shadow p-6 flex items-center gap-4 group"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 
+                       flex items-center gap-4 group hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+              <div
+                className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center 
+                          group-hover:bg-secondary/20 transition-colors"
+              >
                 <TableProperties className="w-6 h-6 text-secondary" />
               </div>
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-secondary">Explain Tables</h3>
                 <p className="text-sm text-gray-600">Understand complex tables easily</p>
               </div>
-            </button>
+            </motion.button>
           </motion.div>
 
           {/* Ask PDF Section */}
           <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="card space-y-4"
+            variants={itemAnimation}
+            className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 space-y-6"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <MessageSquare className="w-6 h-6 text-primary" />
               </div>
               <h2 className="text-xl font-semibold text-primary">Ask PDF</h2>
             </div>
 
             <div className="space-y-4">
               <select
-                className="w-full p-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 
-                         focus:border-primary transition-all outline-none"
+                className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 
+                         focus:border-primary transition-all outline-none bg-white"
                 value={selectedOption}
                 onChange={(e) => setSelectedOption(e.target.value)}
               >
@@ -190,42 +211,46 @@ const ActionPage = () => {
                 ))}
               </select>
 
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
-                  className="flex-1 p-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary/20 
+                  className="flex-1 p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 
                            focus:border-primary transition-all outline-none"
                   placeholder="Ask a question about your PDF..."
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                 />
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => handleSubmit("AskPDF", { user_question: question, selected_option: selectedOption })}
-                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors 
-                           flex items-center gap-2"
+                  className="px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-dark 
+                           transition-colors flex items-center justify-center gap-2 min-w-[120px]"
                 >
                   <Send className="w-4 h-4" />
                   Ask
-                </button>
+                </motion.button>
               </div>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={handleVoiceInput}
-                className="w-full p-3 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50 
-                         transition-colors flex items-center justify-center gap-2"
+                className="w-full p-3 border border-gray-200 rounded-xl text-gray-700 hover:bg-gray-50 
+                         transition-all flex items-center justify-center gap-2"
               >
                 <Mic className="w-4 h-4" />
                 Use Voice Input
-              </button>
+              </motion.button>
 
               {transcribedText && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-3 bg-gray-50 rounded-lg border border-gray-200"
+                  className="p-4 bg-gray-50 rounded-xl border border-gray-200"
                 >
                   <p className="font-medium text-sm text-gray-600">Transcribed Text:</p>
-                  <p className="text-gray-800">{transcribedText}</p>
+                  <p className="text-gray-800 mt-1">{transcribedText}</p>
                 </motion.div>
               )}
             </div>
@@ -233,52 +258,65 @@ const ActionPage = () => {
 
           {/* Results Section */}
           {result && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="card space-y-4">
+            <motion.div
+              variants={itemAnimation}
+              className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 space-y-6"
+            >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <FileText className="w-5 h-5 text-green-600" />
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-green-600" />
                 </div>
                 <h2 className="text-xl font-semibold text-gray-800">Results</h2>
               </div>
 
               <div className="prose max-w-none">
                 {actionType === "Summarize" && result.summary && (
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <h3 className="text-lg font-medium text-primary">Summary</h3>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-gray-700">
-                      {result.summary}
-                    </ReactMarkdown>
+                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-gray-700">
+                        {result.summary}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 )}
 
                 {actionType === "ExplainTables" && result.table_explanation && (
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <h3 className="text-lg font-medium text-secondary">Table Explanation</h3>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-gray-700">
-                      {result.table_explanation}
-                    </ReactMarkdown>
+                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-gray-700">
+                        {result.table_explanation}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 )}
 
                 {(actionType === "AskPDF" || actionType === "Query") && result.answer && (
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <h3 className="text-lg font-medium text-primary">Answer</h3>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-gray-700">
-                      {result.answer}
-                    </ReactMarkdown>
+                    <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]} className="text-gray-700">
+                        {result.answer}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 )}
 
                 {result.error && (
-                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700"
+                  >
                     <strong>Error:</strong>
                     <p>{result.error}</p>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             </motion.div>
           )}
-        </div>
+        </motion.div>
       </div>
       {isLoading && <PdfLoader />}
     </motion.div>
