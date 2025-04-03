@@ -11,6 +11,11 @@ import mysql.connector
 from llama_parse import LlamaParse
 from langchain.text_splitter import SpacyTextSplitter
 
+# Flask app configuration
+app = Flask(__name__)
+CORS(app)
+app.secret_key = "your_secret_key"
+
 # Data config
 def get_collection_names():
     collections = pd.read_csv("data.csv").to_dict("list")["collection_name"]
@@ -71,11 +76,6 @@ def cache_response(collection_name, response_type, response_text):
         print("Response cached successfully.")
     except Exception as e:
         print(f"Error caching response: {e}")
-
-# Flask app configuration
-app = Flask(__name__)
-CORS(app)
-app.secret_key = "your_secret_key"
 
 # AI Configuration
 api_key_cycle = os.getenv("GEMINI_API_KEY")
