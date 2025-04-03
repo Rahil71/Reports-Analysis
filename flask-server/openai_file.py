@@ -14,6 +14,11 @@ from dotenv import load_dotenv
 from langchain.text_splitter import SpacyTextSplitter
 from langchain_community.embeddings import OpenAIEmbeddings
 
+# Flask app configuration
+app = Flask(__name__)
+CORS(app)
+app.secret_key = "your_secret_key"
+
 load_dotenv()
 
 # Data config
@@ -76,11 +81,6 @@ def cache_response(collection_name, response_type, response_text):
         print("Response cached successfully.")
     except Exception as e:
         print(f"Error caching response: {e}")
-
-# Flask app configuration
-app = Flask(__name__)
-CORS(app)
-app.secret_key = "your_secret_key"
 
 # AI Configuration
 # api_key_openai = "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"
